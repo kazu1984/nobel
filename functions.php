@@ -1,6 +1,21 @@
 <?php
 
 // ------------------------------------------------
+// グローバル変数
+// ------------------------------------------------
+
+// パス
+$WP_ROOT_PATH = get_stylesheet_directory_uri();
+$WP_IMG_PATH = esc_html($WP_ROOT_PATH . '/assets/images');
+$WP_CSS_PATH = esc_html($WP_ROOT_PATH . '/assets/css');
+$WP_JS_PATH = esc_html($WP_ROOT_PATH . '/assets/js');
+
+// OGP用
+$FACEBOOK_APP_ID = '';
+$TWITTER_ACCOUNT_ID = '';
+
+
+// ------------------------------------------------
 // テーマのセットアップ
 // ------------------------------------------------
 function my_theme_setup()
@@ -205,6 +220,62 @@ function get_eyecatch_alt()
 
 
 // ------------------------------------------------
+// OGP設定
+// ------------------------------------------------
+add_action('wp_head', 'my_add_meta_ogp');
+function my_add_meta_ogp()
+{
+  if (is_front_page() || is_singular()) {
+    global $WP_IMG_PATH;
+    global $FACEBOOK_APP_ID;
+    global $TWITTER_ACCOUNT_ID;
+    global $post;
+    $ogp_title = '';
+    $ogp_descr = '';
+    $ogp_url = '';
+    $ogp_img = '';
+    $insert = '';
+
+    if (is_singular() && !is_page()) {
+      setup_postdata($post);
+      $ogp_title = $post->post_title;
+      $ogp_descr = mb_substr(get_the_excerpt(), 0, 100);
+      $ogp_url = get_permalink();
+      wp_reset_postdata();
+    } else {
+      $ogp_title = get_bloginfo('name');
+      $ogp_descr = get_bloginfo('description');
+      $ogp_url = home_url();
+    }
+
+    // og:type
+    $ogp_type = (is_front_page() || is_home()) ? 'website' : 'article';
+
+    // og:image
+    if (is_singular() && has_post_thumbnail()) {
+      $ps_thumb = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+      $ogp_img = $ps_thumb[0];
+    } else {
+      $ogp_img = $WP_IMG_PATH . '/common/ogp.jpg';
+    }
+
+    // タグ出力
+    $insert .= '<meta property="og:title" content="' . esc_attr($ogp_title) . '">' . "\n";
+    $insert .= '<meta property="og:description" content="' . esc_attr($ogp_descr) . '">' . "\n";
+    $insert .= '<meta property="og:type" content="' . $ogp_type . '">' . "\n";
+    $insert .= '<meta property="og:url" content="' . esc_url($ogp_url) . '">' . "\n";
+    $insert .= '<meta property="og:image" content="' . esc_url($ogp_img) . '">' . "\n";
+    $insert .= '<meta property="og:site_name" content="' . esc_attr(get_bloginfo('name')) . '">' . "\n";
+    $insert .= '<meta name="twitter:card" content="summary_large_image">' . "\n";
+    $insert .= '<meta name="twitter:site" content="' . $TWITTER_ACCOUNT_ID . '">' . "\n";
+    $insert .= '<meta property="og:locale" content="ja_JP">' . "\n";
+    $insert .= '<meta property="fb:app_id" content="' . $FACEBOOK_APP_ID . '">' . "\n";
+    echo $insert;
+  }
+}
+
+
+// ------------------------------------------------
 // titleにセパレータを出力
 // ------------------------------------------------
 add_filter('document_title_separator', 'my_document_title_separator');
@@ -250,7 +321,6 @@ function my_query($query)
   if ($query->is_tax()) {
     $query->set('posts_per_page', 5);
   }
-
 }
 add_filter('pre_get_posts', 'my_query');
 
@@ -455,7 +525,6 @@ function my_refine_search($query)
     if (!empty($tax_query)) {
       $query->set('tax_query', $tax_query);
     }
-
   }
 }
 add_action('pre_get_posts', 'my_refine_search');
