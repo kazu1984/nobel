@@ -1,0 +1,51 @@
+@use "setting" as *;
+
+.p-category-card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .16);
+  padding: 1px 1px;
+}
+
+.p-category-card::after {
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: rem(15);
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid $color-base-font-main;
+  border-right: 1px solid $color-base-font-main;
+  transform: rotate(45deg);
+  transition: right $transition;
+}
+
+.p-category-card:hover::after {
+  right: rem(12)
+}
+
+.p-category-card:hover .p-category-card__img {
+  opacity: .7;
+}
+
+.p-category-card__img {
+  width: 23.43%;
+  flex-shrink: 0;
+}
+
+.p-category-card__img  img {
+  width: 100%;
+  aspect-ratio: 56 / 44;
+}
+
+.p-category-card__body {
+  padding-right: rem(30);
+}
+
+.p-category-card__name {
+  font-size: rem(14);
+  margin-left: rem(15);
+}

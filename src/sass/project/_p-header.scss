@@ -1,0 +1,80 @@
+@use "setting" as *;
+
+.p-header {
+  background-color: $color-base-background-main; 
+}
+
+.p-header__inner {
+  display: flex;
+  align-items: center;
+  padding: 0 $padding-sp;
+  height: 100%;
+  @include mq("md") {
+    padding: 0 $padding-pc;
+  }
+}
+
+.p-header__logo {
+  font-size: rem(26);
+  font-weight: $medium;
+  color: $color-menu-logo;
+  @include mq("md") {
+    font-size: rem(40);
+  }
+}
+
+.p-header__menu {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  margin-left: auto;
+}
+
+.p-header__search {
+  display: none;
+  @include mq("md") {
+    display: block;
+    width: rem(200);
+  }
+}
+
+.p-header__nav {
+  display: none;
+  @include mq("md") {
+    display: block;
+    height: inherit;
+  }
+}
+
+.p-header__items {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.p-header__item {
+  height: inherit;
+  margin-left: rem(26);
+  a {
+    display: flex;
+    align-items: center;
+    height: inherit;
+  }
+}
+
+.p-header__button {
+  display: none;
+  @include mq("md") {
+    display: block;
+    margin-left: rem(40);
+  }
+}
+
+.p-header__hamburger {
+  margin-left: rem(20);
+  z-index: map-get($layer, "header-menu");
+  @include mq("md") {
+    display: none;
+  }
+}
+

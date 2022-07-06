@@ -1,0 +1,10 @@
+@use "setting" as *;
+
+.p-news-post__back {
+  display: inline-block;
+  margin-top: rem(80);
+  text-decoration: underline;
+  @include mq("md") {
+    margin-top: rem(140);
+  }
+}

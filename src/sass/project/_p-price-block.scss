@@ -1,0 +1,14 @@
+@use "setting" as *;
+
+.p-price-block {
+  display: flex;
+  align-items: center;
+}
+
+.p-price-block span {
+  display: block;
+}
+
+.p-price-block > *:not(:first-child) {
+  margin-left: rem(20);
+}

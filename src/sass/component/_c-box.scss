@@ -1,0 +1,32 @@
+@use "setting" as *;
+
+.c-box {
+  display: inline-block;
+  width: rem(40);
+  height: rem(20);
+}
+
+.c-box--red {
+  background-color: red;
+}
+
+.c-box--blue {
+  background-color: blue;
+}
+
+.c-box--yellow {
+  background-color: yellow;
+}
+
+.c-box--green {
+  background-color: green;
+}
+
+.c-box--black {
+  background-color: black;
+}
+
+.c-box--white {
+  border: 1px solid grey;
+  background-color: white;
+}

@@ -1,0 +1,31 @@
+@use "setting" as *;
+
+.p-category__description {
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.p-category__text {
+  @include mq("md") {
+    width: 49%;
+  }
+}
+
+.p-category__img  img {
+  width: 100%;
+  aspect-ratio: 409 / 245;
+}
+
+.p-category__img {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: 0;
+    margin-left: 10%;
+    width: 41%;
+  }
+}
+
+.p-category__item-list {
+  margin-top: rem(120);
+}

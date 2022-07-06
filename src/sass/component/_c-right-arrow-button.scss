@@ -1,0 +1,33 @@
+@use "setting" as *;
+
+.c-right-arrow-button {
+  display: inline-block;
+  position: relative;
+  width: rem(45);
+  height: rem(45);
+  background-color: $color-scene-arrow-background;
+  border-radius: 50%;
+}
+
+.c-right-arrow-button::before {
+  content: "";
+  position: absolute;
+  width: rem(22);
+  height: rem(3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-button-right-arrow;
+}
+
+.c-right-arrow-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(12);
+  width: rem(15);
+  height: rem(15);
+  border-top: 3px solid $color-button-right-arrow;
+  border-right: 3px solid $color-button-right-arrow;
+  transform: translateY(-50%) rotate(45deg);
+}

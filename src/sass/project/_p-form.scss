@@ -1,0 +1,80 @@
+@use "setting" as *;
+
+.p-form a {
+  color: $color-form-link;
+}
+
+.p-form__inner {
+  @include mq("md") {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.p-form__title {
+  font-size: rem(20);
+  font-weight: $medium;
+}
+
+.p-form__title:not(:first-of-type) {
+  margin-top: rem(87);
+}
+
+.p-form__label,
+.p-form__input {
+  margin-top: 30px;
+}
+
+.p-form__label {
+  display: flex;
+  align-items: flex-start;
+  font-weight: $regular;
+  @include mq("md") {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding-top: rem(7);
+  }
+}
+
+.p-form__required {
+  display: inline-block;
+  font-size: rem(14);
+  color: $color-base-font-sub;
+  background-color: $color-form-marker;
+  margin-left: rem(10);
+  padding: .4em 1em;
+  border-radius: 5px;
+  @include mq("md") {
+    margin-left: 0;
+  }
+}
+
+.p-form__input {
+  @include mq("md") {
+    padding-left: 5%;
+    width: 70%;
+  }
+}
+
+.p-form__policy {
+  text-align: center;
+  margin-top: rem(50);
+}
+
+.p-form__button {
+  margin-top: rem(60);
+  text-align: center;
+}
+
+.p-form__item-img {
+  width: 50%;
+  aspect-ratio: 579 / 403;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wpcf7-response-output {
+  display: none !important;
+}

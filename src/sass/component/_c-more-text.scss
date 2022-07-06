@@ -1,0 +1,9 @@
+@use "setting" as *;
+
+.c-more-text {
+  text-decoration: underline;
+}
+
+.c-more-text:hover {
+  opacity: .7;
+}

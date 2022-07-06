@@ -1,0 +1,17 @@
+@use "setting" as *;
+
+.p-breadcrumb {
+  font-size: rem(14);
+  color: $color-breadcrumb-font;
+}
+
+.p-breadcrumb span {
+  margin: 0 rem(5);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.p-breadcrumb span:first-of-type {
+  margin-left: rem(0);
+}

@@ -1,0 +1,20 @@
+@use "setting" as *;
+
+.l-sub-page {
+  margin-top: rem(85);
+}
+
+.l-sub-page--404 {
+  margin-top: rem(250);
+}
+
+.l-sub-page__main {
+  margin-top: rem(43);
+}
+
+.l-sub-page__aside {
+  margin-top: rem(80);
+  @include mq("md") {
+    margin-top: rem(192);
+  }
+}

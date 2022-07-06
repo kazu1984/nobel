@@ -1,0 +1,76 @@
+@use "setting" as *;
+
+.p-scene-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  background-color: $color-scene-background;
+}
+
+.p-scene-card:hover .p-scene-card__img {
+  opacity: 0.7;
+}
+
+.p-scene-card:hover .p-scene-card__button .c-right-arrow-button {
+  background-color: $grey-lighter;
+  transition: background-color $transition;
+}
+
+.p-scene-card__img img {
+  width: 100%;
+  aspect-ratio: 324 / 317;
+}
+
+.p-scene-card__body {
+  padding: rem(26) rem(15) rem(90) rem(15);
+}
+
+.p-scene-card__name {
+  font-weight: $bold;
+  font-size: rem(20);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p-scene-card__text {
+  margin-top: rem(26);
+}
+
+.p-scene-card__footer {
+  padding: rem(15);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.p-scene-card__button {
+  text-align: right;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: $color-scene-slide-button;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+  opacity: .3;
+}
+
+.swiper-button-next {
+  background-image: url("../images/common/arrow-right.svg");
+}
+.swiper-button-prev {
+  background-image: url("../images/common/arrow-left.svg");
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  display: none;
+}

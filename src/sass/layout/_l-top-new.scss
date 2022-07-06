@@ -1,0 +1,8 @@
+@use "setting" as *;
+
+.l-top-new {
+  margin-top: rem(100);
+  @include mq("md") {
+    margin-top: rem(150);
+  }
+}

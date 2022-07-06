@@ -1,0 +1,27 @@
+@use "setting" as *;
+
+.c-menu-link {
+  display: block;
+  position: relative;
+}
+
+.c-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: rem(20);
+  width: 0;
+  height: 2px;
+  background-color: $color-menu-underline;
+  transition: width $transition;
+}
+
+.c-menu-link:hover {
+  transition: width $transition;
+}
+
+.c-menu-link:hover::after {
+  @include mq("md") {
+    width: 100%;
+  }
+}

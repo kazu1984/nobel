@@ -1,0 +1,40 @@
+@use "setting" as *;
+
+.p-shop {
+  color: $color-base-font-main;
+  background-color: $color-base-background-main;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-shop__top {
+  padding: rem(28) rem(32) 0;
+  flex-grow: 1;
+}
+
+.p-shop__bottom {
+  padding: 0 rem(32) rem(19);
+}
+
+.p-shop__name {
+  font-size: rem(18);
+  font-weight: $medium;
+}
+
+.p-shop__text {
+  margin-top: rem(6);
+}
+
+.p-shop__text--address {
+  padding-left: 5em;
+  text-indent: -5em;
+}
+
+.p-shop__map iframe {
+  margin-top: rem(5);
+  width: 100%;
+  aspect-ratio: 440 / 350;
+  @include mq("md") {
+    aspect-ratio: 440 / 245;
+  }
+}

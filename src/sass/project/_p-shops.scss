@@ -1,0 +1,22 @@
+@use "setting" as *;
+
+.p-shops {
+  margin-top: rem(42);
+  @include mq("md") {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.p-shops__item {
+  @include mq("md") {
+    width: 49%;
+  }
+}
+
+.p-shops__item + .p-shops__item {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: 0;
+  }
+}

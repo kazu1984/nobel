@@ -1,0 +1,15 @@
+@use "setting" as *;
+
+.c-search-box__inner {
+  position: relative;
+}
+
+.c-search-box__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(14);
+  font-size: rem(18);
+  color: $color-form-search-icon;
+}
+

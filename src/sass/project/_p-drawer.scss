@@ -1,0 +1,43 @@
+@use "setting" as *;
+
+.p-drawer {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  background-color: $color-base-background-main;
+  transform: translateX(0);
+  z-index: map-get($layer, "drawer");
+  transition: all 0.3s;
+}
+
+.p-drawer[data-click="true"] {
+  visibility: visible;
+  opacity: 1;
+}
+
+.p-drawer__items {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  padding: rem(60) $padding-sp rem(150);
+}
+
+.p-drawer__item {
+  text-align: center;
+}
+
+.p-drawer__item + .p-drawer__item {
+  margin-top: rem(30);
+}
+
+.p-drawer__item--button {
+  text-align: center;
+}
+
+.p-drawer__link {
+  display: block;
+}

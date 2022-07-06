@@ -1,0 +1,64 @@
+@use "setting" as *;
+
+.c-pagination .page-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(14);
+  @include mq("md") {
+    font-size: rem(16);
+  }
+}
+
+
+.c-pagination .page-numbers .page-numbers {
+  padding: rem(8) rem(15);
+  margin-left: rem(5);
+  display: block;
+  background-color: $color-pagenation-background;
+}
+
+.c-pagination .page-numbers .prev,
+.c-pagination .page-numbers .next {
+  padding: rem(8) rem(6);
+}
+.c-pagination .page-numbers .dots {
+  padding: rem(8) rem(0);
+}
+
+.c-pagination .page-numbers .current {
+  color: $color-pagenation-active-font;
+  background-color: $color-pagenation-active-background;
+}
+
+
+.c-pagination .screen-reader-text {
+  border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.c-pagination .screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+

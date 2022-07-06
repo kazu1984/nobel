@@ -1,0 +1,75 @@
+// color
+$black: #333;
+$black-lighter: #7f7c7c;
+$green: #82e390;
+$green-darker: #69cf78;
+$yellow: #F0F8C2;
+$white: #fff;
+$red: #d92e2e;
+$pink: #f89393;
+$grey: #e5e3e3;
+$grey-lighter: #c9c9c9;
+
+
+// base
+$color-base-font-main: $black;
+$color-base-font-sub: $white;
+$color-base-background-main: $white;
+$color-base-background-sub: $green;
+
+// button
+$color-button-background-main: $green;
+$color-button-color-main: $white;
+$color-button-background-hover: $green-darker;
+$color-button-right-arrow: $black;
+
+// border
+$color-form-border: $grey-lighter;
+
+// menu
+$color-menu-logo: $green;
+$color-menu-underline: $green;
+
+// breadcrumb
+$color-breadcrumb-font: $black-lighter;
+
+// item
+$color-item-sale-font: $white;
+$color-item-sale-background: $red;
+$color-item-spec-background: $grey;
+
+// card 
+$color-card-sale-font: $red;
+$color-card-sale-label: $pink;
+
+// pagenation
+$color-pagenation-active-font: $white;
+$color-pagenation-active-background: $green;
+$color-pagenation-background: $white;
+
+// scene
+$color-scene-background: $yellow;
+$color-scene-arrow-background: $white;
+$color-scene-slide-button: $grey-lighter;
+
+// form
+$color-form-border: $grey-lighter;
+$color-form-marker: $green;
+$color-form-link: $green;
+$color-form-select: $black-lighter;
+$color-form-search-icon: $grey-lighter;
+
+// news
+$color-news-category-list: $grey;
+$color-news-category-list-hover: $grey-lighter;
+$color-news-tag: $green;
+
+// loading 
+$color-loading-circle: $green;
+$color-loading-background: $white;
+
+// post 
+$color-post-link: $green;
+$color-post-list: $green;
+$color-post-block: $grey;
+$color-post-block-mark: $grey-lighter;

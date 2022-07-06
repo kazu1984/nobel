@@ -1,0 +1,11 @@
+@use "setting" as *;
+
+.p-scene-swiper {
+  position: relative;
+}
+
+.p-scene-swiper .swiper-slide {
+  background-color: $color-scene-background;
+  height: auto;
+}
+

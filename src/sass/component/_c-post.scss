@@ -1,0 +1,157 @@
+@use "setting" as *;
+
+.c-post > * {
+  margin-top: rem(80);
+}
+
+.c-post {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $bold;
+  }
+}
+
+.c-post h1 {
+  font-size: rem(32);
+}
+
+.c-post h2 {
+  font-size: rem(26);
+}
+
+.c-post h3 {
+  position: relative;
+  font-size: rem(22);
+  padding-left: 0.8em;
+}
+
+.c-post h3::before {
+  position: absolute;
+  content: "";
+  border-left: rem(4) solid $color-base-font-main;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.c-post h4 {
+  font-size: rem(18);
+}
+
+.c-post a {
+  color: $color-post-link;
+}
+
+.c-post a:hover {
+  text-decoration: underline;
+}
+
+.c-post img {
+  max-width: 100%;
+}
+
+.c-post iframe {
+  width: 100%;
+}
+
+.c-post pre {
+  white-space: pre-wrap;
+}
+
+.c-post .wp-block-quote {
+  border: none;
+}
+
+.c-post blockquote {
+  position: relative;
+  background-color: $color-post-block;
+  display: table;
+  line-height: 1.5;
+  padding: rem(27) rem(26) rem(32) rem(74);
+}
+
+.c-post blockquote::before {
+  position: absolute;
+  content: "“";
+  color: $color-post-block-mark;
+  font-size: rem(85);
+  top: 0;
+  left: 3%;
+}
+
+.c-post blockquote cite {
+  display: block;
+  font-size: rem(12);
+  margin-top: rem(20);
+  text-align: right;
+}
+
+.c-post li {
+  position: relative;
+  margin-top: rem(20);
+  margin-left: rem(25);
+  line-height: 1.5;
+}
+
+.c-post ul > li::before {
+  position: absolute;
+  content: "●";
+  font-size: rem(12);
+  color: $color-post-list;
+  top: 0.2em;
+  left: -2.5em;
+}
+
+.c-post ol {
+  counter-reset: item;
+}
+
+.c-post ol > li {
+  position: relative;
+  counter-increment: item;
+}
+
+.c-post ol > li::before {
+  position: absolute;
+  content: "";
+  color: $color-base-font-main;
+  top: 0;
+  left: -1.7em;
+  content: counter(item) ".";
+}
+
+.c-post pre {
+  background-color: $color-post-block;
+  padding: rem(10);
+}
+
+.c-post input[type="password"] {
+  border: 1px solid $color-base-font-main;
+}
+
+.c-post input[type="submit"] {
+  background-color: $green;
+  color: $color-base-font-sub;
+  padding: rem(5);;
+}
+
+.c-post table {
+  font-size: rem(14);
+  border: 1px solid $color-post-block-mark;
+  border-collapse: collapse;
+  width: 100%
+}
+
+.c-post table td, .c-post table th {
+  border: 1px solid $color-post-block-mark;
+  padding: .8em
+}
+
+.c-post hr {
+  background-color: $color-post-block-mark;
+  margin: rem(40) 0
+}

@@ -1,0 +1,75 @@
+@use "setting" as *;
+
+.p-mv {
+  position: relative;
+}
+
+.p-mv__swiper .swiper-slide img {
+  width: 100%;
+  height: calc(100vh - $header-height);
+  @include mq("md") {
+    height: auto;
+    aspect-ratio: 1280 / 553;
+  }
+}
+
+/* ページネーションの余白 */
+.p-mv__swiper
+  .swiper-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet,
+.p-mv__swiper
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 rem(8) 0;
+}
+
+.p-mv__swiper .swiper-pagination {
+  @include mq("md") {
+    text-align: right;
+    padding-right: rem(138);
+  }
+}
+
+/* ページネーションのサイズと色 */
+.p-mv__swiper .swiper-pagination-bullet {
+  background-color: $black;
+  height: rem(15);
+  width: rem(15);
+}
+
+.p-mv__copy {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(#fff, 0.5);
+  border-radius: 5px;
+  padding: rem(20) rem(25);
+  z-index: 10;
+  @include mq("md") {
+    width: rem(538);
+    top: 22.24%;
+    left: 10.78%;
+    transform: none;
+    padding: rem(69) 0 rem(90) rem(44);
+  }
+}
+
+.p-mv__copy-main {
+  font-size: rem(22);
+  line-height: 1;
+  @include mq("md") {
+    font-size: rem(29);
+  }
+}
+
+.p-mv__copy-sub {
+  font-size: rem(18);
+  line-height: 1.8;
+  margin-top: rem(34);
+  @include mq("md") {
+    font-size: rem(22);
+  }
+}

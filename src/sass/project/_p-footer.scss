@@ -1,0 +1,45 @@
+@use "setting" as *;
+
+.p-footer {
+  color: $color-base-font-sub;
+}
+
+.p-footer__inner {
+  padding-top: rem(42);
+  padding-bottom: rem(42);
+}
+.p-footer__top {
+  display: flex;
+  align-items: center;
+}
+
+.p-footer__logo {
+  font-weight: $medium;
+  font-size: rem(26);
+  @include mq("md") {
+    font-size: rem(40);
+  }
+}
+
+.p-footer__contact {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.p-footer__middle {
+  margin-top: rem(77);
+}
+
+.p-footer__middle-title {
+  font-size: rem(20);
+  font-weight: $medium;
+}
+
+.p-footer__bottom {
+  margin-top: rem(62);
+  text-align: center;
+}
+
+.p-footer__copyright {
+  margin-top: rem(24);
+}

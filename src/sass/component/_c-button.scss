@@ -1,0 +1,71 @@
+@use "setting" as *;
+
+.c-button {
+  display: inline-block;
+  color: $color-button-color-main;
+  background-color: $color-button-background-main;
+  width: rem(160);
+  padding: rem(9) rem(10);
+  text-align: center;
+  border-radius: 120px;
+  transition: background-color $transition;
+}
+
+.c-button:hover {
+  background-color: $color-button-background-hover;
+}
+
+.c-button--icon {
+  position: relative;
+}
+
+.c-button--icon::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: rem(25);
+  height: rem(25);
+  top: 50%;
+  transform: translateY(-50%);
+  left: rem(15);
+}
+
+.c-button--contact {
+  width: rem(220);
+}
+
+.c-button--contact-item {
+  width: rem(310);
+}
+
+.c-button--submit {
+  width: rem(220);
+  display: block;
+  margin: auto;
+}
+
+.c-button--contact::before,
+.c-button--contact-item::before {
+  background-image: url("../images/common/envelope.svg");
+}
+
+.c-button--search::before {
+  background-image: url("../images/common/search.svg");
+}
+
+.c-button--grey {
+  width: rem(140);
+  color: $color-base-font-main;
+  background-color: $color-news-category-list;
+}
+
+.c-button--grey:hover {
+  background-color: $color-news-category-list-hover;
+}
+
+.c-button--grey.is-active {
+  color: $color-button-color-main;
+  background-color: $color-button-background-main;
+}

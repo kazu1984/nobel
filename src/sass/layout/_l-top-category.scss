@@ -1,0 +1,8 @@
+@use "setting" as *;
+
+.l-top-category {
+  margin-top: rem(50);
+  @include mq("md") {
+    margin-top: rem(222);
+  }
+}

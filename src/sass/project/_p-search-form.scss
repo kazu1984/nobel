@@ -1,0 +1,46 @@
+@use "setting" as *;
+
+.p-search-form {
+  border: 1px solid $color-form-border;
+  padding: rem(50) rem(43);
+}
+
+.p-search-form__item {
+  @include mq("sm") {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.p-search-form__label {
+  width: rem(100);
+}
+
+.p-search-form__item + .p-search-form__item {
+  margin-top: rem(30);
+}
+
+.p-search-form__label + * {
+  margin-top: rem(15);
+  @include mq("sm") {
+    margin-top: 0;
+    margin-left: rem(50);
+  }
+}
+
+.p-search-form__colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(10) rem(20);
+
+}
+
+.p-search-form__color {
+  display: flex;
+  align-items: center;
+}
+
+.p-search-form__button {
+  text-align: center;
+  margin-top: rem(68);
+}

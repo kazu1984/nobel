@@ -1,0 +1,36 @@
+@use "setting" as *;
+
+.p-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rem(20);
+  row-gap: rem(100);
+
+  @include mq("sm") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mq("md") {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.p-cards--large {
+  @include mq("sm") {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include mq("md") {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.p-cards--category {
+  @include mq("md") {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.p-cards--scene {
+  @include mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
